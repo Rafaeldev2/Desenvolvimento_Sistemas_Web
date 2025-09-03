@@ -7,13 +7,15 @@ app.use(express.json());
 let projetos = [];
 
 app.get('/projetos', (req, res) => {
-  res.json(tasks);
+  res.json(projetos);
 });+
 
 app.post("/projetos", (req, res) => {
   const projeto = req.body;
   projetos.push(projeto);
-  res.json(projeto)
+  console.log("Projeto adicionado:", projeto);
+  console.log("Array atual:", projetos);
+  res.json(projeto);
 });
 
 app.put('/projetos/:id', (req, res) => {
@@ -21,7 +23,7 @@ app.put('/projetos/:id', (req, res) => {
   const updatedProjeto = req.body;
   projetos = projetos.map(projeto => {
     if(projeto.id == id){
-        return {...projetos, titulo: updatedProjeto.titulo }
+        return {...projeto, updatedProjeto }
     }
     return projeto;
   })
