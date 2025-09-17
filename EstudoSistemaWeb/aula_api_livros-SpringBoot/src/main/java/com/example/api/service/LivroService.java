@@ -27,4 +27,12 @@ public class LivroService {
         return livros;
     }
 
+    public void deletarLivro(long codigo){
+        for (Livro livro : livros){
+            if(livro.getCodigo() == codigo){
+                livros.remove(livro);
+            }
+        }
+    }
+
 }

@@ -22,9 +22,9 @@ public class LivroController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Livro> criarLivro(@RequestBody Livro livro){
-        Livro livroSalvo = livroService.criarLivro(livro);
-        return new ResponseEntity(livroSalvo, HttpStatusCode.valueOf(201));
+    public ResponseEntity<String> criarLivro(@RequestBody Livro livro){
+        livroService.criarLivro(livro);
+        return new ResponseEntity<>("Livro criado e adicionado com sucesso!!!", HttpStatusCode.valueOf(201));
     }
 
     @GetMapping("/listar")
@@ -35,6 +35,7 @@ public class LivroController {
 
     @DeleteMapping("/exclui/{codigo}")
     public ResponseEntity<String> excluirLivro(@PathVariable("codigo") Long codigo){
+        livroService.deletarLivro(codigo);
         return new ResponseEntity<>("Livro Excluído com Sucesso!", HttpStatus.OK);
     }
 
