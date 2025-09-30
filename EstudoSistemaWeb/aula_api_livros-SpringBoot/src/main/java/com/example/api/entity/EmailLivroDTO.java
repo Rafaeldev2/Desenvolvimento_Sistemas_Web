@@ -1,6 +1,12 @@
 package com.example.api.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 public class EmailLivroDTO {
+
     private String livro;
     private String mensagem;
 
