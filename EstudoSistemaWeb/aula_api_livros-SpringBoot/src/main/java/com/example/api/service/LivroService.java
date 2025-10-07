@@ -1,5 +1,6 @@
 package com.example.api.service;
 
+import com.example.api.Repository.livroRepository;
 import com.example.api.entity.Livro;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +11,17 @@ import java.util.List;
 public class LivroService {
 
     private EnviarEmailService enviarEmailService;
+    private livroRepository livrorepository;
 
-    public LivroService(EnviarEmailService enviarEmailService){
+    public LivroService(EnviarEmailService enviarEmailService, livroRepository livrorepository){
         this.enviarEmailService = enviarEmailService;
+        this.livrorepository = livrorepository;
     }
 
     private List<Livro> livros = new ArrayList<>();
 
     public Livro criarLivro(Livro livro){
-        livros.add(livro);
+        livrorepository.save(livro);
         enviarEmailService.enviarEmail(livro);
         return livro;
     }

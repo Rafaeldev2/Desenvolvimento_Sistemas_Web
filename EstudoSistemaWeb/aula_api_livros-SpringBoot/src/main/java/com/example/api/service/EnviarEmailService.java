@@ -1,6 +1,6 @@
 package com.example.api.service;
 
-import com.example.api.entity.EmailLivroDTO;
+import com.example.api.entity.DTO.EmailLivroDTO;
 import com.example.api.entity.Livro;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

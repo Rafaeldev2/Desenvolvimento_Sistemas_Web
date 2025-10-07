@@ -1,9 +1,4 @@
-package com.example.api.entity;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+package com.example.api.entity.DTO;
 
 public class EmailLivroDTO {
 
