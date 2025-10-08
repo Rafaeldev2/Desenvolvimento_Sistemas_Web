@@ -1,19 +1,30 @@
 package com.example.api.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Livro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long codigo;
+
+    @Column(nullable = false)
     private String titulo;
+
+    @Column(nullable = true)
     private String isbn;
+
+    @Column(nullable = false)
     private String autor;
+
+    public Livro(Long codigo, String titulo, String isbn, String autor) {
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.isbn = isbn;
+        this.autor = autor;
+    }
 
     public Long getCodigo() {
         return codigo;

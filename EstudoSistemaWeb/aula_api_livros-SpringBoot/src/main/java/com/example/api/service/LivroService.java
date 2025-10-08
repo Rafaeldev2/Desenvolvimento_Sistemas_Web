@@ -2,12 +2,14 @@ package com.example.api.service;
 
 import com.example.api.Repository.livroRepository;
 import com.example.api.entity.Livro;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class LivroService {
 
     private EnviarEmailService enviarEmailService;
